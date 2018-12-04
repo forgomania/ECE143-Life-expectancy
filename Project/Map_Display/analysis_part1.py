@@ -80,6 +80,12 @@ def showSpot(data,feature,year,nums):
     #return data
     
 def analysis(data):
+    '''
+    Does the part 1 of our data analysis, using the functions above
+    
+    params:
+        data (DataFrame)
+    '''
 
     assert isinstance(data,pd.core.frame.DataFrame)
         
