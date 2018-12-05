@@ -55,6 +55,9 @@ class CleanData:
         #format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
         
         assert isinstance(df,pd.DataFrame)   
+        
+        #Fixing the countries with mislabeled development status
+        df = self.__development_fix(df.copy())
                
         df.loc[df['Status'] == 'Developing','Status'] = 1
         df.loc[df['Status'] == 'Developed','Status'] = 2
@@ -110,6 +113,27 @@ class CleanData:
     @property
     def feature_tables(self):
         return self.__feature_tables.copy()
+    
+    
+    @staticmethod
+    def __development_fix(df):
+        '''
+        This function fix the countries which have mislabeled Status column.
+        
+        param:
+            df (DataFrame)
+        returns:
+            result (DataFrame)
+        '''
+        assert isinstance(df,pd.DataFrame)
+        country_list = ['France','Canada','Finland','Israel','Republic of Korea']
+        
+        for country in country_list:
+             df.loc[df['Country'] == country,'Status'] = 'Developed'
+                      
+        result = df
+        
+        return result
     
     
     @staticmethod
