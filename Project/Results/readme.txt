@@ -1,0 +1,1 @@
+We store reults and images in this folder.

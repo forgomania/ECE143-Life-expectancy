@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
-
+#pip install selenium
 
 def showBar(data,feature,year):
     '''
@@ -45,6 +45,28 @@ def showBar(data,feature,year):
     plt.ylim(0, 100)
     plt.show()
 
+def sortdata(data,year,nums):
+    """
+    Return data in specific year with only given feature and life expectancy of top and bottom [num] countries.
+    Use altair in the main jupyter notebook to display the plots
+    params:
+        data(DataFrame)
+        year(int)
+        nums(int)
+    """
+    assert isinstance(data,pd.core.frame.DataFrame)
+    assert isinstance(year,int)
+    assert data.Year.min() <= year <= data.Year.max()  
+    
+    data=data[data['Year']==year]
+    data=data.sort_index(by='Life expectancy ')
+    
+    topdata=data[-nums:].copy()
+    topdata['rank']='Top'+str(nums)
+    bottomdata=data[0:nums].copy()
+    bottomdata['rank']='Bottom'+str(nums)
+    return pd.concat((topdata,bottomdata))
+    
 
 def showSpot(data,feature,year,nums):
     """
@@ -52,7 +74,7 @@ def showSpot(data,feature,year,nums):
     expectancy and the given feature / year.
     
     params:
-        data (FataFrame)
+        data (DataFrame)
         feature (str)
         year (int)    
     """
@@ -75,8 +97,16 @@ def showSpot(data,feature,year,nums):
     plt.ylabel('Life expectancy ')
     plt.scatter(topValue,topLE,label='top'+str(nums))
     
+    
     plt.legend()
     plt.show()
+    
+    #testdata=data[0:10]
+    #testchart=Chart(data)
+    #testchart.mark_point().encode(x=feature,y='Life expectancy ',color='Country')
+    #testchar=Chart(data)
+    #testchar.mark_point().encode(x='GDP',y='Life expectancy ',color='Country')
+    #testchar.save('chart.png')
     #return data
     
 def analysis(data):
@@ -88,7 +118,7 @@ def analysis(data):
     '''
 
     assert isinstance(data,pd.core.frame.DataFrame)
-        
+    
     data2000=data[data['Year']==2000]
         
     newdata = data2000.sort_index(by='Life expectancy ')
@@ -98,7 +128,6 @@ def analysis(data):
     
     for i in data.columns:
         showSpot(data,i,2000,20)
-
 
 
 
