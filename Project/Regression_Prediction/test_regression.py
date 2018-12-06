@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Nov 21 12:19:09 2018
-
 @author: ericli
 """
 
@@ -58,7 +57,7 @@ def prediction(data,model):
 	newmodel=model.cpu()
 	return newmodel(data).item()
 		
-def train_model(model,epochs,trainsize=0.8):
+def train_model(torch_x,torch_y,model,epochs,trainsize=0.8):
     assert isinstance(model,str)
     assert isinstance(epochs,int) and epochs>1
     
@@ -173,12 +172,11 @@ def regression_analysis(data):
 		torch_y=Variable(torch.from_numpy(target),requires_grad = False)
 
 		
-	train_model('linear',1000,0.9)
-	model=train_model('shallow',1000,0.9)
+	train_model(torch_x,torch_y,'linear',1000,0.9)
+	model=train_model(torch_x,torch_y,'shallow',1000,0.9)
 
 	testdata=np.array(data.iloc[2039])
 	#print(testdata)
 	result=prediction(testdata,model)
 	print('The output of the neural networks model: ')
 	print(result)
-
