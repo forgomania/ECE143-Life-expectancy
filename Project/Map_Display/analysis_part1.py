@@ -131,3 +131,17 @@ def analysis(data):
 
 
 
+def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20):
+    
+    rankdata=sortdata(data,year,nums)
+    return alt.Chart(rankdata).mark_circle().encode(
+    alt.X(x, scale=alt.Scale(zero=False)),
+    alt.Y(y, scale=alt.Scale(zero=False, padding=1)),
+    color='rank',
+    size=size
+).properties(
+    height=600,
+    width=800
+)
+
+
