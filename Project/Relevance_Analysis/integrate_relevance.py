@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec  6 00:49:15 2018
-
 @author: jinqingyuan
 """
 
@@ -1285,4 +1284,3 @@ def visualGDP(data):
     plt.close()
     
     return
-

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec  6 00:34:29 2018
-
 @author: jinqingyuan
 """
 
@@ -14,16 +13,14 @@ import numpy as np
 import random
 import collections
 from scipy.optimize import leastsq
-data='/Users/jinqingyuan/Documents/ECE143/projrct/DATA/modified.csv'
 
-
-def visual_allfeaturechaning(data):
+def visual_allfeaturechaning(whf):
     '''
     This function returns a bar plot with global avarage GDP changing over 15 yaers.
     We want to get how features changed could influence life expectancy changing.
     '''
-    assert isinstance(data,str)
-    whf = pd.read_csv(data)
+    #data='/output/modified.csv'
+    whf.insert(0, 'dummy', whf['Measles '])
     
     '''using feature'''
     gdp = whf.ix[:,17].values

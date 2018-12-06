@@ -10,8 +10,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-text = 'GDP,HIV,Population, Schooling, Mortality,infant,Alcohol,expenditure%,Measles,BMI,15belowdeaths,Polio,ExpenditureTotal,Diphtheria,IncomeResources,GDP,YoungThinness'
-
 def visual_wordcloud(text):
     '''
     This part we achieve showing all features randomly by wordcloud.

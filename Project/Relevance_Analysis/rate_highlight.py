@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec  4 01:29:21 2018
-
 @author: jinqingyuan
 """
 
@@ -13,17 +12,15 @@ import numpy as np
 import random
 import collections
 from scipy.optimize import leastsq
-data = '/Users/jinqingyuan/Documents/ECE143/projrct/DATA/modified.csv'
 
-def visual_highlightrate(data):
+def visual_highlightrate(whf):
     '''
     This part we analyze feature's changing rate over years.
     This fuction will return one particular relevant feature's changing rate which I want
     With the background of other features. 
     '''
-    assert isinstance(data,str)
-    
-    whf = pd.read_csv(data)
+       
+    whf.insert(0, 'dummy', whf['Measles '])
     '''life'''
     
     year = whf.ix[:,2].values

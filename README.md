@@ -13,9 +13,9 @@ Python: Python 3.6.6 :: Anaconda, Inc.
 Modules required: (latest versions)   
  - pygal   
  - pygal_maps_world
- - pandas as pd
- - numpy as np
- - matplotlib.pyplot as plt
+ - PyTorch 
+ - conda-forge wordcloud
+ - numpy scipy matplotlib ipython jupyter pandas sympy nose
  - from sklearn import decomposition
  - from sklearn.decomposition import PCA
  - from sklearn.preprocessing import StandardScaler
@@ -26,22 +26,26 @@ Modules required: (latest versions)
  
 The modules/classes we created for the project are all stored under the "Project/" directory. Each subfolder in "Project/" has its own readme, giving brief information and stating the original author(s) of the code.
 
-As I (Arda Bati) am working on the structuring of the codes, my name comes up in many of the commits. For clarity, our main work distribution until now is given below: (main authors of each part)
+For clarity, our main work distribution until now is given below: (main authors of each part)
 
 Arda C. Bati  
  - Data Cleaning
- - Object Oriented restructuring of all the code
- - Main function (until now)
+ - Object Oriented / function based restructuring of the code
+ - Main function
+ - Making of the Presentation
    
 Qingyuan Jin  
  - Principal Component Analysis
- - Data Visualization (details to follow)
+ - Data Visualization (Part 2, Relevance Analysis)
+- Making of the Presentation
 
 Weinan Li  
  - Map Display
  - Linear Regression and Neural Network Model
- - Data Visualization (details to follow)
+ - Data Visualization (Part 1, Differences between countries)
  - Extraction of GDP / Population
+- Making of the Presentation
   
 Wei Zhang  
- - Data Visualization (details to follow)
+ - Data Visualization (Part 3, CHange through the years)
+- Making of the Presentation
