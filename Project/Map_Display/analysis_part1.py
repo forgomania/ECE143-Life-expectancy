@@ -4,7 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
-#pip install selenium
+from altair import Chart, load_dataset
+import altair as alt
 
 def showBar(data,feature,year):
     '''
@@ -132,16 +133,35 @@ def analysis(data):
 
 
 def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20):
+    """
+    show scatter plot of features with y( default to be life expectancy), with option to change size according to another feature.
+    """
     
     rankdata=sortdata(data,year,nums)
+    
     return alt.Chart(rankdata).mark_circle().encode(
     alt.X(x, scale=alt.Scale(zero=False)),
     alt.Y(y, scale=alt.Scale(zero=False, padding=1)),
     color='rank',
-    size=size
-).properties(
+    size=size).properties(height=600,width=800)
+    
+
+def showBar_alt(data,y='Life expectancy ',nums=10,year=2000):
+    """
+    show bar plot of a feature in given year with top nums countries
+    """
+    
+    
+    newdata=sortdata(data,year,nums)
+    
+    return alt.Chart(newdata).mark_bar().encode(
+    x=alt.X('Life expectancy ', axis=alt.Axis(title='Life Expectancy')),
+    y=alt.Y('Country', sort=alt.EncodingSortField(field='Life Expectancy ', op='sum', order='ascending')),
+    color='rank',
+    ).properties(
     height=600,
     width=800
-)
+    )
 
+    
 
