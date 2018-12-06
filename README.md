@@ -20,7 +20,10 @@ Modules required: (latest versions)
  - from sklearn.decomposition import PCA
  - from sklearn.preprocessing import StandardScaler
  - from Project.Data_Cleaning import clean_data
-
+ - from Project.Map_Display.analysis_part1 import sortdata
+ - from altair import Chart, load_dataset
+ - import altair as alt
+ 
 The modules/classes we created for the project are all stored under the "Project/" directory. Each subfolder in "Project/" has its own readme, giving brief information and stating the original author(s) of the code.
 
 As I (Arda Bati) am working on the structuring of the codes, my name comes up in many of the commits. For clarity, our main work distribution until now is given below: (main authors of each part)
