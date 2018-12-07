@@ -55,8 +55,8 @@ def generate_results(df):
     Y1=Top10mean_fea.tolist()
     Y2=df_dif15mean.tolist()
     Y2[3]=Y2[3]*(-1)
-    print(Y1)
-    print(Y2)
+    #print(Y1)
+    #print(Y2)
     plt.rcParams['font.size']=18
     plt.bar(X, Y1, alpha=0.8, width = 0.35, facecolor = 'green', label='Top 10 Countries', lw=2.3, tick_label=name_list)
     plt.bar(X+0.35, Y2, alpha=0.8, width = 0.35, facecolor = 'orange', label='All Countries', lw=2.3)
