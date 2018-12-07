@@ -132,36 +132,68 @@ def analysis(data):
 
 
 
-def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20):
+def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20,height=600,width=800,title="Default_Title"):
     """
     show scatter plot of features with y( default to be life expectancy), with option to change size according to another feature.
+    
+    params:
+        data, originaldata, pd.dataframe
+        y, y-axis feature, str
+        x, x-axis feature, str
+        size, the size we want set for x feature
+        nums, the number of countries we want to present, int
+        year, the yeart we want to extract data and show from, int
+        height, the height of the graph we want to plot, int
+        width, the width of the graph we want to plot, int
     """
+    
+    assert isinstance(data,pd.core.frame.DataFrame)
+    assert isinstance(y,str)
+    assert isinstance(nums,int)
+    assert isinstance(year,int) and data.Year.min() <= year <= data.Year.max()  
+    assert isinstance(height,int) and isinstance(width,int)
+    assert isinstance(x,str)
     
     rankdata=sortdata(data,year,nums)
     
-    return alt.Chart(rankdata).mark_circle().encode(
+    return alt.Chart(rankdata,title=title).mark_circle().encode(
     alt.X(x, scale=alt.Scale(zero=False)),
     alt.Y(y, scale=alt.Scale(zero=False, padding=1)),
     color='rank',
-    size=size).properties(height=600,width=800)
+    size=size).properties(height=height,width=width).configure_axis(titleFontSize=15)
     
 
-def showBar_alt(data,y='Life expectancy ',nums=10,year=2000):
+def showBar_alt(data,y='Life expectancy ',nums=10,year=2000,height=600,width=800,title=None):
     """
     show bar plot of a feature in given year with top nums countries
+    
+    params:
+        data, originaldata, pd.dataframe
+        y, y-axis, str
+        nums, the number of countries we want to present, int
+        year, the yeart we want to extract data and show from, int
+        height, the height of the graph we want to plot, int
+        width, the width of the graph we want to plot, int
     """
+    
+    assert isinstance(data,pd.core.frame.DataFrame)
+    assert isinstance(y,str)
+    assert isinstance(nums,int)
+    assert isinstance(year,int) and data.Year.min() <= year <= data.Year.max()  
+    assert isinstance(height,int) and isinstance(width,int)
+    
     
     
     newdata=sortdata(data,year,nums)
     
-    return alt.Chart(newdata).mark_bar().encode(
+    return alt.Chart(newdata,title=title).mark_bar().encode(
     x=alt.X('Life expectancy ', axis=alt.Axis(title='Life Expectancy')),
     y=alt.Y('Country', sort=alt.EncodingSortField(field='Life Expectancy ', op='sum', order='ascending')),
     color='rank',
     ).properties(
-    height=600,
-    width=800
-    )
+    height=height,
+    width=width
+    ).configure_axis(titleFontSize=15)
 
     
 
