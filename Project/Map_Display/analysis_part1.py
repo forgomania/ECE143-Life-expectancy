@@ -132,7 +132,7 @@ def analysis(data):
 
 
 
-def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20,height=600,width=800,title="Default_Title"):
+def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20,height=600,width=800,title="Default_Title",color='rank'):
     """
     show scatter plot of features with y( default to be life expectancy), with option to change size according to another feature.
     
@@ -159,7 +159,7 @@ def showScatter(data,x,size=None,y='Life expectancy ',year=2000, nums=20,height=
     return alt.Chart(rankdata,title=title).mark_circle().encode(
     alt.X(x, scale=alt.Scale(zero=False)),
     alt.Y(y, scale=alt.Scale(zero=False, padding=1)),
-    color='rank',
+    color=color,
     size=size).properties(height=height,width=width).configure_axis(titleFontSize=15)
     
 

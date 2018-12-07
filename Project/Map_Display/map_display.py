@@ -155,7 +155,7 @@ def displaymap(data,feature,year,color1=(255,100,100),color2=(1,200,200)):
 
     #fractionlist=list(np.linspace(0,1,len(lifedata)))
     #the colors shown on colorbar
-    colors = plt.cm.RdBu(np.linspace(0,1.,129)) 
+    colors = plt.cm.RdYlGn(np.linspace(0,1.,129)) 
     colors=colors*255
     colors=colors.astype(int)
     colors[1][0:3]
@@ -242,7 +242,7 @@ def createBar():
     x = np.linspace(minValue,maxValue,100)
     y = np.linspace(minValue,maxValue,100)
     X, Y = np.meshgrid(x, y)
-    plt.imshow(f(X, Y), cmap='RdBu', origin='low')
+    plt.imshow(f(X, Y), cmap='RdYlGn', origin='low')
     plt.colorbar()
      
     plt.xticks(())
