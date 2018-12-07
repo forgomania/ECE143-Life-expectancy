@@ -93,7 +93,7 @@ def visual_allfeaturechaning(whf):
     plt.title('GDP Tendency',fontsize = 18)
     plt.bar(X, X_1,color ='y',width = 0.65)
     plt.legend(('GDP','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('GDP_year.jpg',dpi=500)
+    #plt.savefig('GDP_year.jpg',dpi=500)
     plt.show()
     plt.close()
         
@@ -135,7 +135,7 @@ def visual_allfeaturechaning(whf):
     plt.ylabel('Income resources',fontsize = 16)
     plt.bar(X, X_1,color = 'darkgoldenrod',width = 0.65)
     plt.legend(('Income resources','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('Income_year.jpg',dpi=500)
+    #plt.savefig('Income_year.jpg',dpi=500)
     plt.show()
     plt.close()
 
@@ -178,7 +178,7 @@ def visual_allfeaturechaning(whf):
     plt.title('Schooling Tendency',fontsize = 18)
     plt.bar(X, X_1,width = 0.65,label='')
     plt.legend(('Schooling','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('school_year.jpg',dpi=500)
+    #plt.savefig('school_year.jpg',dpi=500)
     plt.show()
     plt.close()    
 
@@ -221,7 +221,7 @@ def visual_allfeaturechaning(whf):
     plt.title('Adult motality Tendency',fontsize = 18)
     plt.bar(X, X_1,color = 'k',width = 0.65,label='graph 1')
     plt.legend(('Adult motality','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('adm_year.jpg',dpi=300)
+    #plt.savefig('adm_year.jpg',dpi=300)
     plt.show()
     plt.close()
 
@@ -264,7 +264,7 @@ def visual_allfeaturechaning(whf):
     plt.title('HIV Tendency',fontsize = 18)
     plt.bar(X, X_1,color = 'r',width = 0.65,label='graph 1',alpha = 0.5)
     plt.legend(('HIV-AIDS','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('hiv_year.jpg',dpi=500)
+    #plt.savefig('hiv_year.jpg',dpi=500)
     plt.show()
     plt.close()
 
@@ -308,7 +308,7 @@ def visual_allfeaturechaning(whf):
     plt.title('BMI Tendency',fontsize = 18)
     plt.bar(X, X_1,color = 'orange',width = 0.65,label='graph 1')
     plt.legend(('BMI','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('BMI_year.jpg',dpi=500)
+    #plt.savefig('BMI_year.jpg',dpi=500)
     plt.show()
     plt.close()
     
@@ -352,7 +352,7 @@ def visual_allfeaturechaning(whf):
     plt.title('Hepatitis B Tendency',fontsize = 18)
     plt.bar(X, X_1,color = 'magenta',width = 0.65,label='graph 1',alpha=0.5)
     plt.legend(('Hepatitis B','Average/year'),loc=2, bbox_to_anchor=(1.05,1.0),borderaxespad = 0.)
-    plt.savefig('Hb_year.jpg',dpi=500)
+    #plt.savefig('Hb_year.jpg',dpi=500)
     plt.show()
     plt.close()        
         
