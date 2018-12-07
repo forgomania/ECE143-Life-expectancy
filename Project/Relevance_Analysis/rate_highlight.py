@@ -111,6 +111,8 @@ def visual_highlightrate(whf):
     plt.ylabel('Changing Ratio(%)', fontsize = 12)
     plt.title('Changing Rate Tendency',fontsize = 18)
     plt.grid(True)
+	plt.show()
+    plt.close()
 #    plt.plot(X,L,marker='*',color = 'y',mec='y', mfc='w',linewidth=3,alpha = 1)
 #    plt.text(2012,8,'GDP',color='y',fontsize=16,withdash=True)
     
@@ -154,6 +156,8 @@ def visual_highlightrate(whf):
     L.reverse()
     X = range(2001,2016)
     plt.plot(X,L,marker='',color = 'grey',mec='r', mfc='w',alpha = 0.2)
+	plt.show()
+    plt.close()
 #    plt.plot(X,L,marker='*',color = 'darkgoldenrod',mec='darkgoldenrod', mfc='w',linewidth=3,alpha = 1)
 #    plt.text(2009,4,'Income resources',color='darkgoldenrod',fontsize=16,withdash=True)
     
@@ -200,6 +204,8 @@ def visual_highlightrate(whf):
     plt.plot(X,L,marker='',color = 'grey',mec='r', mfc='w',alpha = 0.2)
     plt.plot(X,L,marker='*',color = 'dodgerblue',mec='dodgerblue', mfc='w',linewidth=3,alpha = 1)
     plt.text(2012,5,'Schooling',color='dodgerblue',fontsize=16,withdash=True)
+	plt.show()
+    plt.close()
     
     '''x4:adm''' 
     alt = whf.ix[:,5].values
@@ -241,6 +247,8 @@ def visual_highlightrate(whf):
     L.reverse()
     X = range(2001,2016)
     plt.plot(X,L,marker='',color = 'grey',mec='r', mfc='w',alpha = 0.2)
+	plt.show()
+    plt.close()
 #    plt.plot(X,L,marker='*',color = 'k',mec='r', mfc='w',linewidth=3,alpha = 1)
 #    plt.text(2010,-7,'Adult mortality',color='k',fontsize=16,withdash=True)
     
@@ -285,6 +293,8 @@ def visual_highlightrate(whf):
     L.reverse()
     X = range(2001,2016)
     plt.plot(X,L,marker='',color = 'grey',mec='r', mfc='w',alpha = 0.2)
+	plt.show()
+    plt.close()
 #    plt.plot(X,L,marker='*',color = 'salmon',mec='salmon', mfc='w',linewidth=3,alpha = 1)
 #    plt.text(2013,-8,'HIV',color='salmon',fontsize=16,withdash=True)
     
@@ -328,6 +338,8 @@ def visual_highlightrate(whf):
     L.reverse()
     X = range(2001,2016)
     plt.plot(X,L,marker='',color = 'grey',mec='r', mfc='w',alpha = 0.2)
+	plt.show()
+    plt.close()
     #plt.plot(X,L,marker='*',color = 'orange',mec='orange', mfc='w',linewidth=3,alpha = 1)
     #plt.text(2012,5,'BMI',color='orange',fontsize=16,withdash=True)
     
@@ -377,7 +389,7 @@ def visual_highlightrate(whf):
     
     
     '''save'''
-    plt.savefig('rate_schooling.jpg',dpi=500)
+    #plt.savefig('rate_schooling.jpg',dpi=500)
     plt.show()
     plt.close()
     
